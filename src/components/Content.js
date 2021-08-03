@@ -50,7 +50,7 @@ function Content() {
         </Wrap>
       </Grid>
       <p> SENTIMENT POLARITY: {sentimentObject?.sentimentPolarity} </p>
-      <WordCloud tags={sentimentObject?.tags} />
+      <WordCloud />
     </Container>
   );
 }
