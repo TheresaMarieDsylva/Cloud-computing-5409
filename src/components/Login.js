@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 import Amplify, { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+// import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from 'react';
 
 import VerificationPage from './verifyEmail';
