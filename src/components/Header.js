@@ -37,7 +37,7 @@ const NavMenu = styled.div`
     letter-spacing: 1.42px;
     position: relative;
   }
-  }
+  
 `;
 
 const Link = styled.div`

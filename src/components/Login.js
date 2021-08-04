@@ -10,7 +10,7 @@ import VerificationPage from './verifyEmail';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-function Registration(props) {
+function Login(props) {
 
     const history = useHistory();
     const [user, setUser] = useState({
@@ -188,4 +188,4 @@ function Registration(props) {
     );
 }
 
-export default Registration
+export default Login
