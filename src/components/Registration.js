@@ -55,22 +55,13 @@ function Registration(props) {
             setValidName(false)
             handleErrorMsg("msgName", 'Please enter valid name')
         }
-        // console.log(user.validPassword)
     };
 
     const checkValidNumber = (number) => {
-        // if (numberRegex.test(number)) {
         document.getElementById("number").style.border = "1px solid green"
         handleChange("number", number);
         setValidNumber(true)
         handleErrorMsg("msgNumber", '')
-        // }
-        // else {
-        //     document.getElementById("number").style.border = "1px solid red"
-        //     setValidNumber(false)
-        //     handleErrorMsg("msgNumber", 'Please enter valid phone number')
-        // }
-        // console.log(user.validPassword)
     };
 
     const checkValidEmail = (email) => {
@@ -99,41 +90,14 @@ function Registration(props) {
             setValidPassword(false)
             handleErrorMsg("msgPassword", 'Password must contain must contain at least one digit, one capital, small character and one of the folowing chars- @, #, $,%,&,*')
         }
-        // console.log(user.validPassword)
     };
 
     Amplify.configure({
         Auth: {
-
-            // // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-            // identityPoolId: 'us-east-1:9aa76f09-bb4d-4608-8022-a1d1a6a189c1',
-
-            // // REQUIRED - Amazon Cognito Region
-            // region: 'us-east-1',
-
-            // // OPTIONAL - Amazon Cognito Federated Identity Pool Region 
-            // // Required only if it's different from Amazon Cognito Region
-            // identityPoolRegion: 'us-east-1',
-
-            // // OPTIONAL - Amazon Cognito User Pool ID
-            // userPoolId: 'us-east-1_x9SE9KfTJ',
-
-            // // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-            // userPoolWebClientId: '5sgtlbm4q6m3bvd7fkqod8pak7'
-            // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
             identityPoolId: 'us-east-1:7f9e2b86-796a-433b-98ce-439c2900954b',
-
-            // REQUIRED - Amazon Cognito Region
             region: 'us-east-1',
-
-            // OPTIONAL - Amazon Cognito Federated Identity Pool Region 
-            // Required only if it's different from Amazon Cognito Region
             identityPoolRegion: 'us-east-1',
-
-            // OPTIONAL - Amazon Cognito User Pool ID
             userPoolId: 'us-east-1_luHcWv4fs',
-
-            // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
             userPoolWebClientId: '69cu1qub7mr7cdnplqkkeu3kdl'
         }
     });
@@ -211,16 +175,6 @@ function Registration(props) {
                 setAlertMessage('Please enter required fields')
             }
         }
-
-        // axios.post('http://localhost:3000/insert', {
-        //     "userName": this.state.userName,
-        //     "userPassword": this.state.userPassword,
-        //     "userNumber": this.state.userNumber,
-        //     "userEmailID": this.state.userEmailID,
-        //     "userGender": this.state.userGender
-        // }).then((response) => {
-        //     console.log("inserted")
-        // });
     }
 
     return (
