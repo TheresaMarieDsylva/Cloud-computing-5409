@@ -1,12 +1,15 @@
-import React from "react";
 import "./App.css";
+
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import GlobalStyle from "./globalStyle";
 import Registration from "./components/Registration";
 import Home from "./components/Home";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import React from "react";
 
 function App() {
   return (
