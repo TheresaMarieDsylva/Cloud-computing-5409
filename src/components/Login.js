@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react';
 import VerificationPage from './verifyEmail';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Navigation from './Navigation';
 
 function Login(props) {
 
@@ -127,6 +128,7 @@ function Login(props) {
 
     return (
         <section>
+            <Navigation/>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -187,5 +189,6 @@ function Login(props) {
         </section>
     );
 }
+
 
 export default Login

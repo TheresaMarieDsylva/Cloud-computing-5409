@@ -1,7 +1,9 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { Nav, Navbar, Form, FormControl, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import buttoncolor from '../App.css';
+import Dashboard from './Dashboard';
+
 const Styles = styled.div`
   .navbar { background-color:#22598b;}
   a, .navbar-nav, .navbar-light .nav-link {
@@ -22,20 +24,32 @@ const Styles = styled.div`
       padding: 20px;
   }
 `;
-const Navigation = () => (
 
+
+const Navigation = () => {
+  
+  const [word,setWord]=useState('')
+
+  const handleSearch=(e)=>{
+    e.preventDefault()
+    console.log(setWord(e.target.value))
+  }
+
+    return(
+    
+    
   <Styles>
     <Navbar expand="lg">
       <Navbar.Brand href="/">Welcome</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Form className="form-center">
-        <FormControl type="text" placeholder="Search" className="" />
+        <FormControl type="text" placeholder="Search" value={word} className="" onChange={handleSearch}/>
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
     
         <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
 
           <Nav.Item><Nav.Link href="/register">Register
           </Nav.Link></Nav.Item>
@@ -44,7 +58,9 @@ const Navigation = () => (
       </Navbar.Collapse>
     
     </Navbar>
+    
   </Styles>
 
 )
+      }
 export default Navigation

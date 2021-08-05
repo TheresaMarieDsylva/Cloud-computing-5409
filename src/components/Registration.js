@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 
 import VerificationPage from './verifyEmail';
 import { useHistory } from 'react-router-dom';
+import Navigation from './Navigation';
 
 function Registration(props) {
     const history = useHistory();
@@ -179,6 +180,7 @@ function Registration(props) {
 
     return (
         <section>
+            <Navigation/>
             <br /><br /><br /><br />
             <div class="container">
                 <div class="row">
