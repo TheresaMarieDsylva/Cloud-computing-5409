@@ -10,7 +10,7 @@ function Content() {
   const id = 1;
   useEffect(() => {
     if (id !== undefined) {
-      axios.get("http://localhost:2000/message").then((res) => {
+      axios.get("https://er6f0ym5ia.execute-api.us-east-1.amazonaws.com/receivemessage/message").then((res) => {
         console.log(res);
         setSentimentObject(JSON.parse(JSON.stringify(res.data)));
         console.log(sentimentObject);
