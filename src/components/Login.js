@@ -3,17 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 import Amplify, { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+// import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from 'react';
 
 import VerificationPage from './verifyEmail';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Navigation from './Navigation';
 
-function Registration(props) {
+function Login(props) {
 
     const history = useHistory();
-    // const userDetails = new userDetails();
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -41,17 +41,8 @@ function Registration(props) {
     };
 
     const checkValidEmail = (email) => {
-        // if (emailRegex.test(email)) {
-        //     document.getElementById("email").style.border = "1px solid green"
         setValidEmail(true)
         handleChange("email", email);
-        //     handleErrorMsg("msgEmail", '')
-        // }
-        // else {
-        //     document.getElementById("email").style.border = "1px solid red"
-        //     setValidEmail(false)
-        //     handleErrorMsg("msgEmail", 'Please enter valid email')
-        // }
     };
 
     const checkValidPassword = (pass) => {
@@ -66,33 +57,20 @@ function Registration(props) {
             setValidPassword(false)
             handleErrorMsg("msgPassword", 'Password must contain must contain at least one digit, one capital, small character and one of the folowing chars- @, #, $,%,&,*')
         }
-        // console.log(user.validPassword)
     };
 
     Amplify.configure({
         Auth: {
-
-            // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-            identityPoolId: 'us-east-1:9aa76f09-bb4d-4608-8022-a1d1a6a189c1',
-
-            // REQUIRED - Amazon Cognito Region
+            identityPoolId: 'us-east-1:7f9e2b86-796a-433b-98ce-439c2900954b',
             region: 'us-east-1',
-
-            // OPTIONAL - Amazon Cognito Federated Identity Pool Region 
-            // Required only if it's different from Amazon Cognito Region
             identityPoolRegion: 'us-east-1',
-
-            // OPTIONAL - Amazon Cognito User Pool ID
-            userPoolId: 'us-east-1_x9SE9KfTJ',
-
-            // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-            userPoolWebClientId: '5sgtlbm4q6m3bvd7fkqod8pak7'
+            userPoolId: 'us-east-1_luHcWv4fs',
+            userPoolWebClientId: '69cu1qub7mr7cdnplqkkeu3kdl'
         }
     });
 
     const withdrawSubmit = (e) => {
         e.preventDefault();
-        // console.log(user.email)
         if (!validEmail && !validPassword) {
             document.getElementById("password").style.border = "1px solid red"
             document.getElementById("email").style.border = "1px solid red"
@@ -150,6 +128,7 @@ function Registration(props) {
 
     return (
         <section>
+            <Navigation/>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -211,4 +190,5 @@ function Registration(props) {
     );
 }
 
-export default Registration
+
+export default Login

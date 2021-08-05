@@ -28,16 +28,7 @@ function Registration(props) {
             forceAliasCreation: true
         }).then((response) => {
             if (response = 'SUCCESS') {
-                axios.post('http://localhost:3000/insert', {
-                    "userName": user.name,
-                    "userPassword": user.password,
-                    "userNumber": user.number,
-                    "userEmailID": user.email
-                }).then((response) => {
-                    if (response.data == "Inserted") {
-                        history.push('/');
-                    }
-                });
+                history.push('/');  
             }
         }).catch(
             (err) => {
