@@ -5,9 +5,9 @@ import { Alert, Button, Col, Form } from "react-bootstrap";
 import Amplify, { Auth } from 'aws-amplify';
 import React, { useEffect, useState } from 'react';
 
+import Navigation from './Navigation';
 import VerificationPage from './verifyEmail';
 import { useHistory } from 'react-router-dom';
-import Navigation from './Navigation';
 
 function Registration(props) {
     const history = useHistory();
@@ -202,7 +202,9 @@ function Registration(props) {
                                     }}
 
                                 />
-                                <div><p>{errMessage.msgName}</p></div>
+                                <h6>{errMessage.msgName}</h6>
+                                
+                                {/* <div><p>Hello-{errMessage.msgName}</p></div> */}
                             </div>
                             <div class="col-6">
                                 <Form.Label>Phone Number*</Form.Label>
@@ -212,7 +214,8 @@ function Registration(props) {
                                         checkValidNumber(e.target.value);
                                     }}
                                 />
-                                <div><p>{errMessage.msgNumber}</p></div>
+                                <h6>{errMessage.msgNumber}</h6>
+                                {/* <div><p>{errMessage.msgNumber}</p></div> */}
                             </div>
                         </div>
                         <div class="row">
@@ -224,7 +227,8 @@ function Registration(props) {
                                         checkValidEmail(e.target.value);
                                     }}
                                 />
-                                <div><p>{errMessage.msgEmail}</p></div>
+                                <h6>{errMessage.msgEmail}</h6>
+                                {/* <div><p>{errMessage.msgEmail}</p></div> */}
                             </div>
                             <div class="col-6">
                                 <Form.Label>Password*</Form.Label>
@@ -235,11 +239,12 @@ function Registration(props) {
                                         checkValidPassword(e.target.value);
                                     }}
                                 />
-                                <div><p>{errMessage.msgPassword}</p></div>
+                                <h6>{errMessage.msgPassword}</h6>
+                                {/* <div><p>{errMessage.msgPassword}</p></div> */}
                             </div>
                         </div>
                         <br />
-                        <Button style={{ backgroundColor: "#ff632f", border: "none", marginLeft: "40%" }} type="submit"
+                        <Button style={{ backgroundColor: "#ff632f", border: "none"}} type="submit"
                             onClick={(e) => {
                                 withdrawSubmit(e);
                             }}

@@ -6,10 +6,10 @@ import Amplify, { Auth } from 'aws-amplify';
 // import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from 'react';
 
+import Navigation from './Navigation';
 import VerificationPage from './verifyEmail';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import Navigation from './Navigation';
 
 function Login(props) {
 
@@ -40,9 +40,19 @@ function Login(props) {
         setErrMessage({ ...user, [key]: value });
     };
 
+    
     const checkValidEmail = (email) => {
-        setValidEmail(true)
-        handleChange("email", email);
+        if (emailRegex.test(email)) {
+            document.getElementById("email").style.border = "1px solid green"
+            setValidEmail(true)
+            handleChange("email", email);
+            handleErrorMsg("msgEmail", '')
+        }
+        else {
+            document.getElementById("email").style.border = "1px solid red"
+            setValidEmail(false)
+            handleErrorMsg("msgEmail", 'Please enter valid email')
+        }
     };
 
     const checkValidPassword = (pass) => {
@@ -156,7 +166,7 @@ function Login(props) {
                                         checkValidEmail(e.target.value);
                                     }}
                                 />
-                                <div><p>{errMessage.msgEmail}</p></div>
+                                <h6>{errMessage.msgEmail}</h6>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
@@ -168,11 +178,12 @@ function Login(props) {
                                         checkValidPassword(e.target.value);
                                     }}
                                 />
-                                <div><p>{errMessage.msgPassword}</p></div>
+                                <h6>{errMessage.msgPassword}</h6>
+                                {/* <div><p>{errMessage.msgPassword}</p></div> */}
                             </div>
                         </div>
                         <br />
-                        <Button style={{ backgroundColor: "#ff632f", border: "none", marginLeft: "40%" }} type="submit"
+                        <Button style={{ backgroundColor: "#ff632f", border: "none"}} type="submit"
                             onClick={(e) => {
                                 withdrawSubmit(e);
                             }}

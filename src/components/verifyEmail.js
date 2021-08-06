@@ -78,7 +78,7 @@ function Registration(props) {
                             </div>
                         </div>
                         <br />
-                        <Button style={{ backgroundColor: "#ff632f", border: "none", marginLeft: "45%" }} type="submit"
+                        <Button style={{ backgroundColor: "#ff632f", border: "none"}} type="submit"
                             onClick={(e) => {
                                 withdrawSubmit(e);
                             }}
