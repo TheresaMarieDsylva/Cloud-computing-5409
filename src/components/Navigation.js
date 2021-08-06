@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React, { useState } from 'react';
 import { Nav, Navbar, Form, FormControl, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import buttoncolor from '../App.css';
@@ -27,40 +27,37 @@ const Styles = styled.div`
 
 
 const Navigation = () => {
-  
-  const [word,setWord]=useState('')
 
-  const handleSearch=(e)=>{
+  const [word, setWord] = useState('')
+
+  const handleSearch = (e) => {
     e.preventDefault()
     console.log(setWord(e.target.value))
   }
 
-    return(
-    
-    
-  <Styles>
-    <Navbar expand="lg">
-      <Navbar.Brand href="/">Welcome</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Form className="form-center">
-        <FormControl type="text" placeholder="Search" value={word} className="" onChange={handleSearch}/>
-      </Form>
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-    
-        <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
+  return (
 
-          <Nav.Item><Nav.Link href="/register">Register
+
+    <Styles>
+      <Navbar expand="lg">
+        <Navbar.Brand href="/">Welcome</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+
+            <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
+
+            <Nav.Item><Nav.Link href="/register">Register
           </Nav.Link></Nav.Item>
-          
-        </Nav>
-      </Navbar.Collapse>
-    
-    </Navbar>
-    
-  </Styles>
 
-)
-      }
+          </Nav>
+        </Navbar.Collapse>
+
+      </Navbar>
+
+    </Styles>
+
+  )
+}
 export default Navigation

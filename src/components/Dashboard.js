@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <Background>
-        <Navigation/>
+        {/* <Navigation/> */}
         <Header />
         <Content />
       </Background>

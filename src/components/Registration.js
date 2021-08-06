@@ -180,7 +180,7 @@ function Registration(props) {
 
     return (
         <section>
-            <Navigation/>
+            {/* <Navigation/> */}
             <br /><br /><br /><br />
             <div class="container">
                 <div class="row">

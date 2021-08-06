@@ -17,10 +17,10 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
-        <Route exact path="/" component={Home}/>
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/register" component={Registration}/>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/register" component={Registration} />
         </Switch>
       </Router>
     </div>
